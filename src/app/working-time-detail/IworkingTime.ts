@@ -2,6 +2,6 @@ export interface IworkingTime {
   date: Date,
   time: number,
   project:any,
-  category: any
+  _category: string
   comment: string
 }
