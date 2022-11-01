@@ -8,14 +8,10 @@
 
   </mat-grid-tile>
   <mat-grid-tile>
-    <app-working-time-sum
-    (selectedDateEvent)="switchDetails($event)"
-    ></app-working-time-sum>
+    <app-working-time-sum (selectedDateEvent)="switchDetails($event)"></app-working-time-sum>
   </mat-grid-tile>
   <mat-grid-tile>
     <app-working-time-detail
-    [workingTime]="dateselect"
-    ></app-working-time-detail>
-
+    [workingTime]="dateselect"></app-working-time-detail>
   </mat-grid-tile>
 </mat-grid-list>
