@@ -1,0 +1,10 @@
+table {
+  width: 100%;
+  justify-content: left;
+}
+
+
+
+.mat-cell{
+  padding-left: 6%;
+}

@@ -1,0 +1,33 @@
+<form [formGroup]="workingTimeFormControl">
+<mat-form-field appearance="fill">
+  <mat-label>Datum</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="dateFormControl">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Stunden</mat-label>
+  <input matInput formControlName="timeFormControl">
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Projekt</mat-label>
+  <mat-select formControlName="projectFormControl">
+    <div *ngFor="let project of projects">
+      <mat-option value="{{project.id}}">{{project.name}}</mat-option>
+    </div>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Kategorie</mat-label>
+  <mat-select formControlName="categoryFormControl">
+    <div *ngFor="let category of categories">
+      <mat-option value="{{category.id}}">{{category.name}}</mat-option>
+    </div>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Kommentar</mat-label>
+  <textarea matInput formControlName="commentFormControl"></textarea>
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="saveEntry()">Speichern</button>
+</form>
