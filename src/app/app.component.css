@@ -1,3 +1,4 @@
 mat-grid-tile {
   background: grey;
+  max-width: 1000px;
 }

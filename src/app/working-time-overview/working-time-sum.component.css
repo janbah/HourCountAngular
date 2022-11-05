@@ -3,6 +3,10 @@ table {
   justify-content: left;
 }
 
+mat-grid-tile-content
+{
+  justify-content: normal;
+}
 
 
 .mat-cell{
