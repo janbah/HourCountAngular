@@ -1,4 +1,7 @@
 import {Component, Output} from '@angular/core';
+import {WorkingTimeDataService} from "./working-time-data.service";
+import {WorkingTimeDetailComponent} from "./working-time-detail/working-time-detail.component";
+import {WorkingTimeDataSource} from "./WorkingTimeDataSource";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +11,11 @@ import {Component, Output} from '@angular/core';
 export class AppComponent {
   title = 'HourCountAngular';
 
-  @Output() dateselect:any = new Date()
 
-  switchDetails($event: Date) {
-    this.dateselect = $event;
+
+  constructor() {
   }
+
+
+
 }

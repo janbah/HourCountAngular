@@ -1,8 +1,9 @@
 import {Component, OnInit, Output} from '@angular/core';
-import {IworkingTime} from "../working-time-detail/IworkingTime";
+import {IworkingTimeDetail} from "../working-time-detail/IworkingTimeDetail";
 import {WorkingTimeDataService} from "../working-time-data.service"
 import {IselectList} from "./IselectList";
 import {FormControl, FormGroup} from "@angular/forms";
+import {IworkingTimeForm} from "./IworkingTimeForm";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class WorkingTimeFormComponent implements OnInit {
 
   projects:IselectList[] = [];
   categories:IselectList[] = [];
-  newTimeEntry: IworkingTime; //ToDo: set values as default in form
+  newTimeEntry: IworkingTimeForm; //ToDo: set values as default in form
 
   constructor(private workingTimeData: WorkingTimeDataService ) {
     this.projects = workingTimeData.projects;
@@ -36,9 +37,9 @@ export class WorkingTimeFormComponent implements OnInit {
   saveEntry() {
     //Todo: handle difference between new and edited entry
     this.newTimeEntry.date = this.workingTimeFormControl.controls.dateFormControl.value;
-    this.newTimeEntry.time = this.workingTimeFormControl.controls.timeFormControl.value;
-    this.newTimeEntry.project = this.workingTimeFormControl.controls.projectFormControl.value;
-    this.newTimeEntry._category = this.workingTimeFormControl.controls.categoryFormControl.value;
+    this.newTimeEntry.timeEntry = this.workingTimeFormControl.controls.timeFormControl.value;
+    this.newTimeEntry.projectId = this.workingTimeFormControl.controls.projectFormControl.value;
+    this.newTimeEntry.categoryId = this.workingTimeFormControl.controls.categoryFormControl.value;
     this.newTimeEntry.comment = this.workingTimeFormControl.controls.commentFormControl.value;
 
     this.workingTimeData.newTimeEntry = this.newTimeEntry;

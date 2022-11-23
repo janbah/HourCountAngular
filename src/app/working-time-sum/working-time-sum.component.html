@@ -1,14 +1,14 @@
 <mat-card>
-  <table mat-table [dataSource]="workingTimeOverviewItems">
+  <table mat-table [dataSource]="workingTimeOverview">
 
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Datum </th>
-      <td mat-cell *matCellDef="let workingTimeOverviewItem"> {{workingTimeOverviewItem.date | date:'fullDate'}} </td>
+      <td mat-cell *matCellDef="let workingTimeSum"> {{workingTimeSum.date | date:'fullDate'}} </td>
     </ng-container>
 
     <ng-container matColumnDef="time">
       <th mat-header-cell *matHeaderCellDef> Zeit </th>
-      <td mat-cell *matCellDef="let workingTimeOverviewItem"> {{workingTimeOverviewItem.time}} </td>
+      <td mat-cell *matCellDef="let workingTimeSum"> {{workingTimeSum.sum}} </td>
     </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>

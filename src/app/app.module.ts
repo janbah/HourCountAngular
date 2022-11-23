@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatToolbarModule} from "@angular/material/toolbar";
-import { WorkingTimeSumComponent } from './working-time-overview/working-time-sum.component';
+import { WorkingTimeSumComponent } from './working-time-sum/working-time-sum.component';
 import {MatTableModule} from "@angular/material/table";
 import { WorkingTimeDetailComponent } from './working-time-detail/working-time-detail.component';
 import {MatCardModule} from "@angular/material/card";
@@ -18,13 +18,17 @@ import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {IworkingTimeDetail} from "./working-time-detail/IworkingTimeDetail";
+import {WorkingTimeDataSource} from "./WorkingTimeDataSource";
+import {WorkingTimeDataService} from "./working-time-data.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     WorkingTimeSumComponent,
     WorkingTimeDetailComponent,
-    WorkingTimeFormComponent
+    WorkingTimeFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatNativeDateModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
