@@ -1,4 +1,4 @@
-export interface IworkingTimeDetail {
+export interface IworkingTime {
   id:number,
   date: Date,
   timeEntry: number,

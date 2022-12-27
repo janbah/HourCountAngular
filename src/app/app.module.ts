@@ -19,7 +19,7 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatButtonModule} from "@angular/material/button";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {IworkingTimeDetail} from "./working-time-detail/IworkingTimeDetail";
+import {IworkingTime} from "./working-time-detail/IworkingTime";
 import {WorkingTimeDataSource} from "./WorkingTimeDataSource";
 import {WorkingTimeDataService} from "./working-time-data.service";
 

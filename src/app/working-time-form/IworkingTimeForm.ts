@@ -1,6 +1,7 @@
 export interface IworkingTimeForm {
-  id:number,
+
   date: Date,
+  employeeId: number,
   timeEntry: number,
   projectId: number,
   categoryId: number,

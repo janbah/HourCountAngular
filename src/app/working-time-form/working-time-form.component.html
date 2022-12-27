@@ -12,15 +12,15 @@
 <mat-form-field appearance="fill">
   <mat-label>Projekt</mat-label>
   <mat-select formControlName="projectFormControl">
-    <div *ngFor="let project of projects">
+    <div *ngFor="let project of projects | async">
       <mat-option value="{{project.id}}">{{project.name}}</mat-option>
     </div>
   </mat-select>
 </mat-form-field>
 <mat-form-field appearance="fill">
   <mat-label>Kategorie</mat-label>
-  <mat-select formControlName="categoryFormControl">
-    <div *ngFor="let category of categories">
+  <mat-select   formControlName="categoryFormControl">
+    <div *ngFor="let category of categories | async">
       <mat-option value="{{category.id}}">{{category.name}}</mat-option>
     </div>
   </mat-select>

@@ -1,5 +1,5 @@
 import {Component, Injectable, Input, OnInit} from '@angular/core';
-import {IworkingTimeDetail} from "./IworkingTimeDetail";
+import {IworkingTime} from "./IworkingTime";
 import {WorkingTimeDataService} from "../working-time-data.service";
 import {Observable, of} from "rxjs";
 import {WorkingTimeDataSource} from "../WorkingTimeDataSource";
@@ -37,6 +37,7 @@ export class WorkingTimeDetailComponent implements OnInit {
   }
 
   deleteElement(workingTimeId: number) {
+    console.log('deleting entry with id: ' + workingTimeId)
     //ToDo: Api-Call
     //const index = this._workingTimes.findIndex((w)=>w.id===workingTimeId);
     //this._workingTimes.splice(index,1);

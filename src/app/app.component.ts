@@ -11,11 +11,6 @@ import {WorkingTimeDataSource} from "./WorkingTimeDataSource";
 export class AppComponent {
   title = 'HourCountAngular';
 
-
-
-  constructor() {
-  }
-
-
+  constructor() {}
 
 }

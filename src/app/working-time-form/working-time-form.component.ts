@@ -1,9 +1,10 @@
 import {Component, OnInit, Output} from '@angular/core';
-import {IworkingTimeDetail} from "../working-time-detail/IworkingTimeDetail";
+import {IworkingTime} from "../working-time-detail/IworkingTime";
 import {WorkingTimeDataService} from "../working-time-data.service"
 import {IselectList} from "./IselectList";
 import {FormControl, FormGroup} from "@angular/forms";
 import {IworkingTimeForm} from "./IworkingTimeForm";
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -13,8 +14,8 @@ import {IworkingTimeForm} from "./IworkingTimeForm";
 })
 export class WorkingTimeFormComponent implements OnInit {
 
-  projects:IselectList[] = [];
-  categories:IselectList[] = [];
+  projects:Observable<IselectList[]>;
+  categories:Observable<IselectList[]>;
   newTimeEntry: IworkingTimeForm; //ToDo: set values as default in form
 
   constructor(private workingTimeData: WorkingTimeDataService ) {
@@ -42,8 +43,11 @@ export class WorkingTimeFormComponent implements OnInit {
     this.newTimeEntry.categoryId = this.workingTimeFormControl.controls.categoryFormControl.value;
     this.newTimeEntry.comment = this.workingTimeFormControl.controls.commentFormControl.value;
 
-    this.workingTimeData.newTimeEntry = this.newTimeEntry;
 
-    console.log(this.workingTimeData.newTimeEntry);
+
+    this.workingTimeData.insertWorkingTime(this.newTimeEntry)
+
+
+
   }
 }
